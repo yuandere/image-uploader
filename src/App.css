@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass&family=Merriweather:wght@400;500;600&family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:root {
+  --font: "Poppins", Helvetica, sans-serif;
+  --primary-color: #ff7a4e;
+
+  --grey-1: #f2f2f2;
+  --grey-2: #bdbdbd;
+  --grey-3: #828282;
+  --blue-1: #2D9CDB;
+  --green-1: #27AE60;
+  --red-1: #EB5757;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.5rem;
+
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 5rem;
+
+  --rounded-sm: 8px;
+  --rounded: 16px;
+
+  --shadow-sm: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  --shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  --shadow-hover: 0px 0px 16px 2px rgba( 0, 0, 0, .2 );
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+.App {
+  display: grid;
+  place-items: center;
+  height: 95vh;
+  width: 100vw;
+}
+
+.container,
+.uploadBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+  padding: 3rem 2rem;
+}
+
+#upload {
+  position: absolute;
+  z-index: -1;
+  height: 0.1px;
+  width: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.uploadBox {
+  border: 2px rgb(0, 89, 255) dashed;
+  border-radius: 10px;
+  background:rgba(0, 89, 255, 0.1);
+  width: 50vw;
+  height: 35vw;
+}
+
+#uploadBtn {
+  background-color: rgb(0, 89, 255);
+  color: white;
+  padding: 4px 6px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#uploadBtn:hover {
+  background-color: rgb(0, 68, 194);
+}
