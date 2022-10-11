@@ -59,6 +59,10 @@
   padding: 3rem 2rem;
 }
 
+.container h3 {
+  margin-top: 0;
+}
+
 #upload {
   position: absolute;
   z-index: -1;
@@ -72,8 +76,14 @@
   border: 2px rgb(0, 89, 255) dashed;
   border-radius: 10px;
   background:rgba(0, 89, 255, 0.1);
-  width: 50vw;
-  height: 35vw;
+  width: 85%;
+  height: 60%;
+  padding: 2rem;
+}
+
+.uploadBox p {
+  text-align: center;
+  margin-bottom: 0;
 }
 
 #uploadBtn {
@@ -86,4 +96,58 @@
 
 #uploadBtn:hover {
   background-color: rgb(0, 68, 194);
+}
+
+.statusicon {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #27AE60;
+  border-radius: 100%;
+  margin-bottom: 0.75rem;
+}
+
+.statusicon span {
+  font-size: 32px;
+  color: white;
+}
+
+#imagepreview {
+  display: grid;
+  place-items: center;
+  width: 85%;
+  height: 60%;
+  margin-bottom: 1rem;
+}
+
+#imagepreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.linkBar {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.url {
+  height: 1.5rem;
+  overflow: hidden;
+}
+
+@media (width > 720px) {
+  .container {
+    width: 450px;
+    height: 550px;
+  }
+  .uploadBox {
+    width: 350px;
+    height: 250px
+  }
 }
