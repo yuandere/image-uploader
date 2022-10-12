@@ -2,9 +2,9 @@ import "./App.css"
 
 const Uploading = () => {
   return (
-    <div className="container">
+    <div className="container containersm">
       <h3>Uploading...</h3>
-      <p>loading gif goes here</p>
+      <img src="./loader.svg"></img>
     </div>
   )
 }

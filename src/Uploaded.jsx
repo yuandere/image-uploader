@@ -14,15 +14,15 @@ const Uploaded = ({ selectedFile, fileURL, setIsFileChanged, setIsUploadSuccess 
       <p>Filetype: {selectedFile.type}</p>
       <p>Size in bytes: {selectedFile.size}</p> */}
       <div className="linkBar">
-        <p className="url">{fileURL}</p>
-        <button>Copy</button>
+        <input type='text' className="url" value={fileURL} readOnly></input>
+        <button>Copy Link</button>
       </div>
       <button id="uploadBtn" 
         onClick={ ()=> {
           setIsFileChanged(false);
           setIsUploadSuccess(null)}
         }>
-        Upload more
+        Do It Again!
       </button>
     </div>
   )
