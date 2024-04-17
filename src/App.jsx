@@ -3,6 +3,7 @@ import axios from 'axios';
 import Upload from './Upload';
 import Uploaded from './Uploaded';
 import './App.css';
+const UPLOAD_URL = 'https://taupe-belekoy-a72796-backend.netlify.app/upload';
 
 function App() {
 	const [selectedFile, setSelectedFile] = useState(null);
@@ -18,7 +19,7 @@ function App() {
 
 		if (event.type === 'dragenter' || event.type === 'dragover') {
 			setIsDragging(true);
-		}	else if (event.type === 'dragleave') {
+		} else if (event.type === 'dragleave') {
 			setIsDragging(false);
 		}
 	};
@@ -46,38 +47,37 @@ function App() {
 	const handleUpload = (formData) => {
 		setIsFileChanged(true);
 		axios
-		// .post('http://localhost:5000/upload', formData, {
-			.post('https://image-uploader-backend-production.up.railway.app/upload', formData, {
-			headers: {
-				'Content-Type': 'multipart/form-data',
-			},
-		})
-		.then((res) => {
-			// console.log(res);
-			setIsUploadSuccess(true);
-			setFileURL(res.data);
-		})
-		.catch((err) => {
-			// console.log('error:', err);
-			setIsUploadSuccess(false);
-			setUploadError(err);
-		});
-	}
+			.post(UPLOAD_URL, formData, {
+				headers: {
+					'Content-Type': 'multipart/form-data',
+				},
+			})
+			.then((res) => {
+				// console.log(res);
+				setIsUploadSuccess(true);
+				setFileURL(res.data);
+			})
+			.catch((err) => {
+				// console.log('error:', err);
+				setIsUploadSuccess(false);
+				setUploadError(err);
+			});
+	};
 
 	return (
-		<div className="App">
+		<div className='App'>
 			{!isFileChanged ? (
-				<Upload 
-				onFileChange={onFileChange}
-				isDragging={isDragging}
-				handleDrag={handleDrag}
-				handleDrop={handleDrop}
+				<Upload
+					onFileChange={onFileChange}
+					isDragging={isDragging}
+					handleDrag={handleDrag}
+					handleDrop={handleDrop}
 				></Upload>
 			) : isUploadSuccess === null ? (
-				  <div className="container containersm">
-						<h3>Uploading...</h3>
-						<img src="./loader.svg"></img>
-					</div>
+				<div className='container containersm'>
+					<h3>Uploading...</h3>
+					<img src='./loader.svg'></img>
+				</div>
 			) : isUploadSuccess ? (
 				<Uploaded
 					selectedFile={selectedFile}
@@ -90,7 +90,7 @@ function App() {
 					{uploadError.message}
 					<p>Please use a valid file format (jpg/jpeg/png/gif) under 10mb</p>
 					<button
-						className="blueBtn"
+						className='blueBtn'
 						onClick={() => {
 							setIsFileChanged(false);
 							setIsUploadSuccess(null);
