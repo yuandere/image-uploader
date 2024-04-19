@@ -3,7 +3,7 @@ import axios from 'axios';
 import Upload from './Upload';
 import Uploaded from './Uploaded';
 import './App.css';
-const UPLOAD_URL = 'https://taupe-belekoy-a72796-backend.netlify.app/upload';
+const UPLOAD_URL = 'https://image-uploader-backend.netlify.app/api/upload';
 
 function App() {
 	const [selectedFile, setSelectedFile] = useState(null);
