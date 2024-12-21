@@ -52,9 +52,3 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 - [Loading animations](https://icons8.com/preloaders/en/horizontal)
 - [Drag & Drop in React](https://www.codemzy.com/blog/react-drag-drop-file-upload)
-
-## Contact
-
-- GitHub [@yuandere](https://github.com/yuandere)
-- Discord [@al doub#7487](https://discordapp.com)
-- Email [derek.lee881@gmail.com](mailto:derek.lee881@gmail.com)
